@@ -1,0 +1,17 @@
+{
+  "name": "taskpill",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "start": "nuxi preview"
+  },
+  "devDependencies": {
+    "nuxt": "3.11.2"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.9.0",
+    "vue-color-kit": "^1.0.6"
+  }
+}
