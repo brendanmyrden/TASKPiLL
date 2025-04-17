@@ -33,14 +33,6 @@
         @keyup.esc="cancelEditing"
       />
 
-      <!-- Icon squares container -->
-      <div class="icon-squares">
-        <div class="icon-square" @click="handleIconClick('stats')">📊</div>
-        <div class="icon-square" @click="handleIconClick('notes')">📝</div>
-        <div class="icon-square" @click="handleIconClick('reminder')">⏰</div>
-        <div class="icon-square" @click="handleIconClick('share')">🔗</div>
-      </div>
-
       <!-- Weekly grid only for checkbox type -->
       <div v-if="habit.type === 'checkbox'" class="weekly-grid">
         <div class="weekly-tracker">
@@ -136,6 +128,13 @@
           </div>
         </div>
       </template>
+    </div>
+    <!-- Icon squares container moved to bottom -->
+    <div class="icon-squares">
+      <div class="icon-square" @click="handleIconClick('stats')">📊</div>
+      <div class="icon-square" @click="handleIconClick('notes')">📝</div>
+      <div class="icon-square" @click="handleIconClick('reminder')">⏰</div>
+      <div class="icon-square" @click="handleIconClick('share')">🔗</div>
     </div>
   </div>
 </template>
@@ -822,25 +821,32 @@ function handleIconClick(type) {
 .icon-squares {
   display: flex;
   gap: 8px;
-  margin-top: 8px;
-  padding: 4px;
+  padding: 8px;
   border-top: 1px solid rgba(255, 107, 53, 0.1);
+  margin-top: auto;
+  justify-content: center;
+  background: rgba(255, 107, 53, 0.05);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .icon-square {
-  width: 10px;
-  height: 10px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 8px;
+  font-size: 14px;
   cursor: pointer;
   transition: all 0.2s ease;
   color: rgba(255, 107, 53, 0.6);
+  border-radius: 4px;
+  background: rgba(255, 107, 53, 0.1);
 }
 
 .icon-square:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   color: #ff6b35;
+  background: rgba(255, 107, 53, 0.2);
 }
 </style>
